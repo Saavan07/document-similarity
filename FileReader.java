@@ -50,7 +50,7 @@ public class FileReader
     
     public String generatePathname(int fileNumber)
     {
-        return "./" + directory + "/" + files.get(fileNumber);
+        return new File(directory, files.get(fileNumber)).getPath();
     }
 
     //returns file number using a Binary Search to find the file with the name
@@ -84,7 +84,7 @@ public class FileReader
         for (int i=0; i<numWords; i++)
         {
             Scanner file = new Scanner(new File(pathname));
-            for (int j=0; j<i; j++)
+            for (int j=0; j<i && file.hasNext(); j++)
                 file.next();
             while (file.hasNext())
             {
@@ -92,15 +92,16 @@ public class FileReader
                 for (int k=0; k<numWords; k++)
                 {
                     if (file.hasNext())
-                        phrase += file.next().replaceAll("[^A-z]","").toLowerCase();
+                        phrase += " " + file.next().replaceAll("[^A-Za-z]", "").toLowerCase(Locale.ROOT);
                     else
                         phrase = null;
                 }
                 if (phrase != null)
                 {
-                    phrases.add(phrase);
+                    phrases.add(phrase.trim());
                 }
             }
+            file.close();
         }
         
         return phrases;

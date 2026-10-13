@@ -86,13 +86,13 @@ public class HitList
             //List<String> orderedList = getOrderedList(i);
             //allOrderedLists.add(orderedList);
             
-            List<String> list = reader.generatePhrases(4,i);
+            List<String> list = reader.generatePhrases(numWords,i);
             HashSet<String> hashSet = new HashSet<String>(list);
         
             allPhraseLists.add(list);
             allHashSets.add(hashSet);
             
-            if (i % (numFiles/10) == 0)
+            if (i % Math.max(1, numFiles/10) == 0)
             {
                 System.out.println(i + "/" + numFiles + " lists set up");
             }
