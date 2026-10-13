@@ -1,4 +1,4 @@
-# Document overlap detector
+# Document Similarity
 
 A Java data structures course project that ranks pairs of text files by shared word sequences. This is a similarity signal for human review, not proof of plagiarism.
 
