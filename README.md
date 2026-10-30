@@ -1,6 +1,6 @@
 # Document Similarity
 
-A Java data structures course project that ranks pairs of text files by shared word sequences. This is a similarity signal for human review, not proof of plagiarism.
+I worked on this Java project for my Data Structures course to compare text files using shared word sequences. It ranks document pairs by overlap so someone can review the matches. Similarity alone does not establish plagiarism.
 
 ## Run
 
@@ -26,9 +26,9 @@ There are D(D-1)/2 document pairs for D documents. The set-based path stores phr
 
 ## Scope and attribution
 
-Saavan Kiran's coursework implementation is preserved in the repository history. The October 2026 maintenance update adds explicit command-line arguments and reproducible examples, fixes the hardcoded phrase length, excludes unrelated directories from the interactive menu, handles short documents and small corpora, and preserves word boundaries when constructing phrases.
+This repository contains my coursework implementation. When I revisited it in October 2026, I added command-line arguments and runnable examples, fixed the hardcoded phrase length, excluded unrelated directories from the interactive menu, handled short documents and small corpora, and preserved word boundaries when constructing phrases.
 
-The repository originally had no `src/` directory or bundled document corpus; the instructions above match the actual layout. Original assignment and starter-code attribution are not fully documented, so this README does not claim that every provided interface or scaffold was authored from scratch.
+The Java files are in the repository root, and `examples/` contains the small documents used in the instructions above. This was coursework with assignment-provided material; I haven't fully documented the original starter-code attribution yet.
 
 ## Limitations
 
