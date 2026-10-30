@@ -22,7 +22,7 @@ For the example above, `alpha.txt` and `beta.txt` share two distinct two-word ph
 - `HitCounter.java` retains a separate sorted-list comparison implementation.
 - `PlagiaristCatcher.java` handles folder and parameter selection.
 
-There are D(D-1)/2 document pairs for D documents. The set-based path stores phrases in memory and computes overlap through union sizes. No corpus-scale performance claim is made without a saved reproducible benchmark.
+There are D(D-1)/2 document pairs for D documents. The set-based path stores phrases in memory and computes overlap through union sizes; larger collections require more memory and pairwise comparisons.
 
 ## Scope and attribution
 
@@ -33,5 +33,3 @@ The Java files are in the repository root, and `examples/` contains the small do
 ## Limitations
 
 The tool counts exact normalized overlap. It does not detect semantic paraphrases, distinguish quoted text, or establish intent. ASCII-only normalization drops non-English letters; punctuation and numeric text may collapse. All phrases are retained in memory, and every pair is compared. Invalid nonnumeric command-line arguments produce a Java error.
-
-No new license is assigned by this documentation update.
